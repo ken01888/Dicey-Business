@@ -1,0 +1,44 @@
+let container = document.getElementById('container');
+
+class Die {
+    constructor(){
+        this.die = document.createElement('div');
+        this.die.setAttribute('class','btn btn-outline-dark btn-lg');
+        this.roll()
+        container.appendChild(this.die);  
+        this.die.addEventListener('click',() =>{
+        this.roll()
+        })         
+    }
+    roll(){
+     let ranNum = Math.floor(Math.random () * 6) + 1;
+     this.value = ranNum
+     this.die.innerText = this.value
+    }  
+
+
+}
+// Generate Die Button
+let btn = document.getElementById('sq-button')
+function insertDie(){
+    new Die();
+}
+btn.addEventListener('click',insertDie);
+
+//Roll Dice
+
+let btn2 = document.getElementById('sq-button2')
+function rollDice(){
+
+let dieValues =  document.querySelectorAll('.btn')
+dieValues.forEach((key) => {console.log(key.innerText)}) 
+
+}
+
+btn2.addEventListener('click',rollDice)
+
+
+
+
+
+
